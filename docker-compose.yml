@@ -1,11 +1,15 @@
 name: api
 
 services:
+# Serviço da sua aplicação FastAPI
   api:
-    build: .
-    container_name: api
+    build: . # Constrói a imagem a partir do Doclerfile na raiz do projeto.
+    container_name: api # Nomeia o contêiner.
     ports:
-      - "8000:8000"
-    volumes:
-      - .:/app
+      - "8000:8000" # Mapeia a porta 8000 do contêiner para a porta 8000 do host.
+      # (conforme definido no no seu Dockerfire com EXPOSE 8000 do e CMD)
 
+    volumes:
+    - .:/app # Monta o diretório atual (onde está seu código) em /app dentro do contêiner.
+    # Isso é ótimo para desenvolvimento, pois as alterações no código
+    # são refletidas automaticamente no container devido ao --reload do uvicorn.
