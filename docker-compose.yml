@@ -1,4 +1,4 @@
-version: '3.8'
+name: api
 
 services:
 # Serviço da sua aplicação FastAPI
@@ -13,4 +13,3 @@ services:
     - .:/app # Monta o diretório atual (onde está seu código) em /app dentro do contêiner.
     # Isso é ótimo para desenvolvimento, pois as alterações no código
     # são refletidas automaticamente no container devido ao --reload do uvicorn.
-
